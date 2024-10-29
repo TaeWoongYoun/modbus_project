@@ -19,7 +19,7 @@
   - `modbus_read.py` : Python 데이터 읽기 스크립트로, 모드버스 데이터를 수집
   - `start_program.php` : 프로그램을 시작하여 데이터를 수집하는 스크립트
   - `stop_program.php` : 프로그램을 중지하여 데이터 수집을 멈추는 스크립트
-  - `index.js` : 버튼 클릭 시 프로그램을 시작하거나 종료하는 기능을 제어하고, 데이터 시각화를 위한 JavaScript 코드
+  - `index.js` : 버튼 클릭 시 프로그램을 시작하거나 종료하는 기능을 제어하는 JavaScript 코드
   - `images/` : 이미지 저장 폴더
   - `style.css` : 스타일을 정의하는 CSS 파일
   - `chart.php` : 수집한 데이터를 시각화시킨 화면 (수정중)
