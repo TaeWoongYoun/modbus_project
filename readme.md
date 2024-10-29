@@ -24,7 +24,7 @@
   - `style.css` : 스타일을 정의하는 CSS 파일
   - `chart.php` : 수집한 데이터를 시각화시킨 화면 (수정중)
 
-아두이노 이미지
+## 🖼️ 아두이노 이미지
 <p align="center">
   <img src="images/modbus.jpg" alt="image" width="600">
 </p>
