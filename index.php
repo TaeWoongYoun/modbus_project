@@ -1,8 +1,4 @@
-<?php $conn = new mysqli("localhost", "root", "1234", "analog_read");
-if ($conn->connect_error) {
-    die("연결 실패: " . $conn->connect_error);
-}
-?>
+<?php $conn = new mysqli("localhost", "root", "1234", "analog_read");?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -13,8 +9,11 @@ if ($conn->connect_error) {
 <body>
     <header>
         <h1>프로그램 데이터 조회</h1>
-        <button onclick="startProgram()">프로그램 시작</button>
-        <button onclick="stopProgram()">프로그램 종료</button>
+        <div class="btn-box">
+            <button onclick="startProgram()">프로그램 시작</button>
+            <button onclick="stopProgram()">프로그램 종료</button>
+            <button><a href="chart.php">데이터 차트화</a></button>
+        </div>
     </header>
     <div class="table-box">
         <table>
