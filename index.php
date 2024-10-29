@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php
-        $sql = "SELECT idx, Distance, Humidity, Temperature, Date FROM program";
-        $result = mysqli_query($conn, $sql);
-    ?>
     <h1>프로그램 데이터 조회</h1>
     <table>
         <thead>
@@ -24,6 +20,8 @@
         </thead>
         <tbody>
             <?php
+                $sql = "SELECT idx, Distance, Humidity, Temperature, Date FROM program";
+                $result = mysqli_query($conn, $sql);
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>
                             <td>" . $row["idx"] . "</td>
