@@ -15,13 +15,13 @@ header h1{
     text-align: center;
     align-content: center;
 }
-header .btn-box{
+header .btn-box, header .tab-menu{
     width: 400px;
     height: 100px;
     text-align: center;
     align-content: center;
 }
-header .btn-box button{
+header .btn-box button, header .tab-menu button {
     padding: 5px 10px;
     margin: 5px;
     border: 1px solid black;
