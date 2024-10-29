@@ -1,6 +1,6 @@
 <?php
 $port = 'COM3'; // 사용하고자 하는 포트
-$command = escapeshellcmd("python3 C:/xampp/htdocs/modbus_project/modbus_read.py $port");
+$command = escapeshellcmd("python C:/xampp/htdocs/modbus_project/modbus_read.py $port");
 $output = shell_exec($command);
 
 if ($output === null) {

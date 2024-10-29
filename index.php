@@ -14,6 +14,7 @@ if ($conn->connect_error) {
     <header>
         <h1>프로그램 데이터 조회</h1>
         <button onclick="startProgram()">프로그램 시작</button>
+        <button onclick="stopProgram()">프로그램 종료</button>
     </header>
     <div class="table-box">
         <table>
