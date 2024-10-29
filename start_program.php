@@ -1,12 +1,9 @@
 <?php
-$port = 'COM3'; // 사용하고자 하는 포트
-$command = escapeshellcmd("python C:/xampp/htdocs/modbus_project/modbus_read.py $port");
-$output = shell_exec($command);
-
-if ($output === null) {
-    echo "Python 스크립트가 정상적으로 실행되지 않았습니다.";
+if (isset($_POST['port'])) {
+    $port = escapeshellarg($_POST['port']); // 사용자 입력 포트 가져오기
+    $command = escapeshellcmd("python C:/xampp/htdocs/modbus_project/modbus_read.py $port");
+    shell_exec($command);
 } else {
-    echo "Output: " . nl2br(htmlspecialchars($output));
+    echo "포트가 설정되지 않았습니다.";
 }
-
 ?>

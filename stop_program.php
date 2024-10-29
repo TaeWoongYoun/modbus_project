@@ -1,6 +1,4 @@
 <?php
-// Python 스크립트를 종료하는 기능
-// Windows에서 Python 프로세스를 강제 종료합니다.
 exec('taskkill /F /IM python.exe', $output, $return_var);
 
 if ($return_var === 0) {
