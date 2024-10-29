@@ -1,4 +1,8 @@
-<?php $conn = new mysqli("localhost", "root", "1234", "Analog_read");?>
+<?php $conn = new mysqli("localhost", "root", "1234", "analog_read");
+if ($conn->connect_error) {
+    die("연결 실패: " . $conn->connect_error);
+}
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,7 +11,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>프로그램 데이터 조회</h1>
+    <header>
+        <h1>프로그램 데이터 조회</h1>
+        <button onclick="startProgram()">프로그램 시작</button>
+    </header>
     <div class="table-box">
         <table>
             <thead>
@@ -21,7 +28,7 @@
             </thead>
             <tbody>
                 <?php
-                    $sql = "SELECT * FROM program";
+                    $sql = "SELECT * FROM program order by idx desc";
                     $result = mysqli_query($conn, $sql);
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>
@@ -36,5 +43,6 @@
             </tbody>
         </table>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>
