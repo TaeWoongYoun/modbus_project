@@ -1,45 +1,16 @@
-<?php
-// 데이터베이스 연결 정보
-$servername = "localhost";
-$username = "root";
-$password = "1234";
-$dbname = "Analog_read";
-
-// MySQL 데이터베이스 연결
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// 연결 오류 확인
-if ($conn->connect_error) {
-    die("데이터베이스 연결 실패: " . $conn->connect_error);
-}
-
-// SELECT 쿼리 작성 및 실행
-$sql = "SELECT idx, Distance, Humidity, Temperature, Date FROM program";
-$result = $conn->query($sql);
-
-?>
-
+<?php $conn = new mysqli("localhost", "root", "1234", "Analog_read");?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>프로그램 데이터 조회</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 8px;
-            text-align: center;
-            border: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php
+        $sql = "SELECT idx, Distance, Humidity, Temperature, Date FROM program";
+        $result = mysqli_query($conn, $sql);
+    ?>
     <h1>프로그램 데이터 조회</h1>
     <table>
         <thead>
@@ -53,27 +24,17 @@ $result = $conn->query($sql);
         </thead>
         <tbody>
             <?php
-            // 데이터가 있으면 각 행을 출력
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . $row["idx"] . "</td>";
-                    echo "<td>" . $row["Distance"] . "</td>";
-                    echo "<td>" . $row["Humidity"] . "</td>";
-                    echo "<td>" . $row["Temperature"] . "</td>";
-                    echo "<td>" . $row["Date"] . "</td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr><td colspan='5'>데이터가 없습니다</td></tr>";
-            }
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>
+                            <td>" . $row["idx"] . "</td>
+                            <td>" . $row["Distance"] . "</td>
+                            <td>" . $row["Humidity"] . "</td>
+                            <td>" . $row["Temperature"] . "</td>
+                            <td>" . $row["Date"] . "</td>
+                        </tr>";
+                    }
             ?>
         </tbody>
     </table>
-
-    <?php
-    // 데이터베이스 연결 종료
-    $conn->close();
-    ?>
 </body>
 </html>
