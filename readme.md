@@ -1,5 +1,3 @@
-![header](https://capsule-render.vercel.app/api?type=Rect&height=200&text=modbus_project&fontSize=70&color=0:FFF,100:7C91FA&stroke=FFF&fontColor=000)
-
 ## 📑 프로젝트 소개
 `modbus_project`는 모드버스를 이용한 데이터 수집과 시각화를 목적으로 하며, 웹 인터페이스를 통해 데이터를 실시간으로 모니터링할 수 있습니다.
 
@@ -11,7 +9,9 @@
 ## 🛠 사용된 기술 스택
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
 ![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?logo=chart-dot-js&logoColor=white)
+![Arduino](https://img.shields.io/badge/Arduino-00979D?logo=arduino&logoColor=white)
 
 아두이노 이미지
 <p align="center">
